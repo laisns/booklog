@@ -1,0 +1,11 @@
+<div class="custom-card-body">
+  <div class="sign-in-up-form">
+    <h2>LOGIN</h2>
+    <%= form_for :session, url: sessions_path do |f| %>
+      <%= f.text_field :login_name, placeholder: 'Login name' %>
+      <%= f.text_field :password, placeholder: 'Password' %>
+      <%= f.submit 'Login' %>
+      <a href="">Forgot password?</a>
+    <% end %>
+  </div>
+</div>

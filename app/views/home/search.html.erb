@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body >
+    <div class="custom-card-body">
+      <%= form_tag get_search_response_path, method: :post do %>
+        <%= text_field_tag(:isbn, placeholder='Search by author, title or ISBN') %>
+        <%= submit_tag('Search') %>
+      <% end %>
+    </div>
+
+  </body>
+</html>

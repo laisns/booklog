@@ -1,26 +1,6 @@
-// Place all the styles related to the home controller here.
+// Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-body {
-background: url('book_background.jpeg') no-repeat center center;
-background-size: cover;
-height: 600px;}
-
-h1 {
-  background-color: rgba(234, 230, 226, 0.9);
-}
-
-.about-text {
-  background-color: rgba(234, 230, 226, 0.9);
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 170px;
-  height: 40%;
-  width: 20%;
-  position: fixed;
-}
 
 .custom-card-body {
   background-color: rgba(223, 219, 216, 0.8);
@@ -28,7 +8,7 @@ h1 {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
-  margin-top: 80px;
+  margin-top: 65px;
   height: 70%;
   width: 50%;
   display: flex!important;
@@ -53,6 +33,16 @@ h1 {
   background-color: #eae6e2;
   border: 1px solid #b5b5b5;
   outline: none;
+}
+
+.sign-in-up-form select {
+  //width: 50%;
+  //display: inline;
+  //margin:20px 0;
+  //padding: 15px;
+  background-color: #eae6e2;
+  border: 1px solid #b5b5b5;
+  //outline: none;
 }
 .sign-in-up-form input[type="submit"] {
   max-width: 150px;

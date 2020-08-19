@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_09_154547) do
+ActiveRecord::Schema.define(version: 2020_08_19_020334) do
 
   create_table "authors", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2020_08_09_154547) do
 
   create_table "book_editions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "book_id"
-    t.string "name"
+    t.string "title"
     t.integer "number"
     t.string "publisher"
     t.string "language"
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2020_08_09_154547) do
   create_table "books", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "author_id"
     t.bigint "genre_id"
-    t.string "name"
+    t.string "title"
     t.integer "release_year"
     t.text "synopsis"
     t.string "language"
@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 2020_08_09_154547) do
     t.integer "progress"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
     t.index ["user_id"], name: "index_lists_on_user_id"
   end
 
@@ -84,6 +85,7 @@ ActiveRecord::Schema.define(version: 2020_08_09_154547) do
     t.string "login_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "password_digest"
   end
 
 end

@@ -1,6 +1,42 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <%= link_to("BookLog", home_index_path, class: 'navbar-brand') %>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <% if current_user %>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <%= link_to("Search", search_path, class: 'nav-link') %>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Lists
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Create new list</a>
+                <a class="dropdown-item" href="#">See your lists</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Profile Settings</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <%= link_to("Log Out", logout_path, method: :delete, class: 'nav-link') %>
+            </li>
+          </ul>
+        <% else %>
+          <span class="navbar-text ml-auto">
+            Don't have an account? <%=link_to 'Register here.', register_path, class: 'nav-text' %>
+          </span>
+        <% end %>
+      </div>
+    </nav>
     <title>Booklog</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
