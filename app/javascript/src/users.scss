@@ -1,0 +1,29 @@
+@import "~bootstrap/scss/bootstrap";
+//@import "bootstrap";
+@import "admin-lte";
+@import "@fortawesome/fontawesome-free";
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700");
+@import url("http://fonts.googleapis.com/css?family=Pacifico");
+@import url("https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css");
+
+.nav-pills .nav-link{border-radius:.25rem}.nav-pills .nav-link.active,
+  .nav-pills .show>.nav-link{
+    color:#fff;
+    background-color:#3d9970;
+}
+
+.alternative-font{
+  font-size: 15px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+  "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.opacity-8 {
+  background-color: rgba(52,58,64,0.8);
+}
+
+.booklog-font {
+  font-family: Pacifico;
+  font-size: 200%;
+}

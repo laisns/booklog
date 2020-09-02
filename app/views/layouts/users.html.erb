@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Booklog</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_pack_tag 'users', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'users', 'data-turbolinks-track': 'reload' %>
+
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body class="hold-transition sidebar-mini">
+    <div class="wrapper bg-gray-dark">
+      <!-- Navbar -->
+      <%= render partial: 'layouts/navbar' %>
+      <!-- /.navbar -->
+
+      <!--   Main Sidebar Container-->
+      <!--  <#%= render partial: 'layouts/sidebar_container' %>-->
+      <!--  /.main sidebar container-->
+
+      <!-- Content Wrapper. Contains page content -->
+      <div class="wrapper">
+        <!-- Content Header (Page header) -->
+        <%= render partial: 'layouts/content_header' %>
+      </div>
+      <!--  /.content Wrapper -->
+
+      <!-- Main content -->
+      <%= yield %>
+      <!--  /.main content-->
+
+      <footer class="bg-dark">
+        <div class="float-right d-none d-sm-block">
+          <b>Version</b> 3.0.5
+        </div>
+        <strong>Copyright &copy; 2020 <a href="#" class="text-olive">BookLog</a>.</strong> All rights
+        reserved.
+      </footer>
+
+      <!-- Control Sidebar -->
+      <aside class="control-sidebar control-sidebar-dark">
+      <!-- Control sidebar content goes here -->
+      </aside>
+      <!-- /.control-sidebar -->
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- jQuery -->
+    <!--<script src="../../plugins/jquery/jquery.min.js"></script>-->
+    <!-- Bootstrap 4 -->
+    <!--<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>-->
+    <!-- AdminLTE App -->
+    <!--<script src="../../dist/js/adminlte.min.js"></script>-->
+    <!-- AdminLTE for demo purposes -->
+    <!--<script src="../../dist/js/demo.js"></script>-->
+  </body>
+</html>

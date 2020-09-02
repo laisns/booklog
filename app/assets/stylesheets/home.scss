@@ -1,7 +1,7 @@
 // Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
+// They will automatically be included in application.stylesheets.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-body {
+.image-background {
 background: url('book_background.jpeg') no-repeat center center;
 background-size: cover;
 height: 600px;}
@@ -30,7 +30,7 @@ h1 {
   margin-left: auto;
   margin-top: 80px;
   height: 70%;
-  width: 50%;
+  width: 30%;
   display: flex!important;
   flex-direction: column;
   justify-content: center!important;
@@ -41,7 +41,7 @@ h1 {
   z-index: 1;
   transition:0.3s ease-in-out;
   color:#343a40;
-  text-align:left;
+  text-align:center;
   padding:50px;
 }
 
@@ -54,8 +54,8 @@ h1 {
   border: 1px solid #b5b5b5;
   outline: none;
 }
-.sign-in-up-form input[type="submit"] {
-  max-width: 150px;
+.sign-in-up-form button {
+  max-width: 300px;
   width: 100%;
   background: #343a40;
   color: #eae6e2;
@@ -66,7 +66,10 @@ h1 {
   float:right;
   cursor:pointer;
 }
+
 .sign-in-up-form a{
   display:inline-block;
   padding:10px 0;
+  font-size: small;
+  color: #2A3038;
 }

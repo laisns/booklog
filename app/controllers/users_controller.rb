@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  layout 'application', only: [:new, :create]
   def new
     @user = User.new
   end
@@ -18,6 +19,12 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+  end
+
+  def show
+    # @user = User.find(params[:id])
+    # @user = User.find_by(login_name: params[:login_name])
+    @user = current_user
   end
 
   private
