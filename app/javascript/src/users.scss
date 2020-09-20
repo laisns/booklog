@@ -5,25 +5,58 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700");
 @import url("http://fonts.googleapis.com/css?family=Pacifico");
 @import url("https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import '~easy-autocomplete/dist/easy-autocomplete';
+@import '~easy-autocomplete/dist/easy-autocomplete.themes';
+
 
 .nav-pills .nav-link{border-radius:.25rem}.nav-pills .nav-link.active,
   .nav-pills .show>.nav-link{
     color:#fff;
-    background-color:#3d9970;
+    background-color: #6c757d;
+    //#276248 to be used in acitvity colors and charts
 }
 
 .alternative-font{
-  font-size: 15px;
+  font-size: 14px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
   "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
   "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-.opacity-8 {
-  background-color: rgba(52,58,64,0.8);
+.bg-dark-opacity-8 {
+  background-color: rgba(56, 63, 83, 0.5);
+
+  //background-color: rgba(26, 30, 39, 0.5);
+  //background-color: rgba(52,58,64, 0.5);
+  color: #fff;
 }
 
 .booklog-font {
   font-family: Pacifico;
   font-size: 200%;
+}
+
+.bg-carbon{
+  background-color: #272b35;
+
+  //background-color: #272b35;
+  //background-color: rgb(26,30,39);
+  //background-color: rgb(0,6,12);
+  //background-color: rgb(24, 27, 30);
+}
+
+.bg-gradient-carbon {
+  //background: #343a40 linear-gradient(180deg, #333739, #1a1d20);
+  //background: #1a1e27 linear-gradient(180deg, #1d1e26, #0d0f13);
+  //background: #383f53 linear-gradient(180deg, #1E2128, #1c1f29);
+  background: #1a1e27 linear-gradient(180deg, #383f53, #1E2128);
+
+
+}
+
+.bg-old-blue {
+  background-color: rgb(30, 33, 40)
+
+  //background-color: rgb(13,15,19)
 }

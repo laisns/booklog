@@ -4,9 +4,14 @@ Rails.application.routes.draw do
   root 'home#index'
   get 'search' => 'home#search', as: :search
   post 'get_search_response' => 'home#get_search_response', as: :get_search_response
-  resources :users, except: [:new, :edit, :destroy]
   get 'register' => 'users#new'
   get 'edit_profile' => 'users#edit'
+  resources :users, except: [:new, :edit, :destroy] do
+    resources :lists, shallow: true
+  end
+
+  resources :book_lists, only: [:new, :create, :destroy]
+  resources :user_books
   # post 'users' => 'users#create'
   resources :sessions, only: [:new, :create]
   delete 'logout' => 'sessions#destroy'

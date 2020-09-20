@@ -13,7 +13,8 @@ document.addEventListener("turbolinks:load", () => {
 
 import '../src/users.scss'
 import '@fortawesome/fontawesome-free/js/all'
-
+import './custom'
+import 'admin-lte'
 // require("admin-lte")
 
 //
@@ -21,4 +22,3 @@ import '@fortawesome/fontawesome-free/js/all'
 // import 'bootstrap/dist/js/bootstrap'
 // import 'jquery.min'
 // import 'admin-lte/dist/js/adminlte.min'
-

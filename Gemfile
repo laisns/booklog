@@ -25,6 +25,7 @@ gem 'awesome_print'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 gem 'bootstrap-sass'
+gem 'bootstrap', '~> 4.1.3'
 gem 'font-awesome-rails'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
@@ -55,7 +56,7 @@ end
 group :test do
   gem 'database_cleaner-active_record'
   gem 'shoulda-matchers', '~> 4.0'
-
+  gem 'rspec'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

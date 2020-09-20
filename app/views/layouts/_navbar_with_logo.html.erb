@@ -1,0 +1,13 @@
+<!--this navbar is specific to non-logged users.-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark-opacity-8">
+  <!--logo with home link-->
+  <%= link_to_main_page %>
+  <!--/logo -->
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <span class="navbar-text ml-auto">
+      Don't have an account? <%=link_to 'Register here.', register_path,
+                                                  class: 'nav-text' %>
+    </span>
+  </div>
+</nav>

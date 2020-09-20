@@ -1,8 +1,11 @@
 module ApplicationHelper
   def link_to_main_page
     path = current_user ? user_path(current_user.login_name) : home_path
-    link_to("BookLog", path, class: 'navbar-brand')
-    # <h2 style="font-family: Pacifico; font-size: 200%">BookLog</h2>
-    #TODO: adicionar fonte no layotu de application
+    content_tag(:a, image_tag("booklog-logo.png", class: 'w-1 h-1'),
+                href: path)
+  end
+
+  def shallow_args(parent, child)
+    child.try(:new_record?) ? [parent, child] : child
   end
 end

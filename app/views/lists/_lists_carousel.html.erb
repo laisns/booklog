@@ -1,0 +1,42 @@
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <% recent_lists(user).map do |list| %>
+      <li data-target="#carouselExampleIndicators" data-slide-to="<%= recent_lists(user).index(list) %>"
+          class="<%= 'active' if list == recent_lists(user).first %>"></li>
+    <% end %>
+  </ol>
+  <div class="carousel-inner">
+    <% recent_lists(user).map do |list| %>
+      <div class="carousel-item
+        <%= 'active' if list == recent_lists(user).first %>">
+        <div class="col-5 offset-md-4">
+          <!-- small card -->
+          <div class="small-box bg-teal">
+            <div class="inner">
+              <h4 class="lead"><%= list.name %></h4>
+              <p><%= list.book_lists.length %> books added</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-book"></i>
+            </div>
+            <%= link_to(edit_list_path(list),
+                        class: 'small-box-footer') do %>
+              Edit this list
+              <i class="fas fa-arrow-circle-right"></i>
+            <% end %>
+            </a>
+          </div>
+       </div>
+      </div>
+    <% end %>
+  </div>
+  <br><br>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>

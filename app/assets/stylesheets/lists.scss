@@ -1,0 +1,52 @@
+// Place all the styles related to the lists controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+div.col-md-6 .form-group input, .form-group input:focus, .form-group textarea,
+.form-group textarea:focus, .form-group select, .form-group select:focus,
+.form-group select option, .form-group select option:focus {
+  background-color: rgba(52,58,64, 0.5);
+  color: white;
+}
+
+.bg-dark-opacity-8 {
+  background-color: rgba(56, 63, 83, 0.5);
+
+  //background-color: rgba(26, 30, 39, 0.5);
+  //background-color: rgba(52,58,64, 0.5);
+  color: #fff;
+}
+
+.booklog-font {
+  font-family: Pacifico;
+  font-size: 200%;
+}
+
+.bg-carbon{
+  background-color: #272b35;
+
+  //background-color: #272b35;
+  //background-color: rgb(26,30,39);
+  //background-color: rgb(0,6,12);
+  //background-color: rgb(24, 27, 30);
+}
+
+.bg-gradient-carbon {
+  //background: #343a40 linear-gradient(180deg, #333739, #1a1d20);
+  //background: #1a1e27 linear-gradient(180deg, #1d1e26, #0d0f13);
+  //background: #383f53 linear-gradient(180deg, #1E2128, #1c1f29);
+  background: #1a1e27 linear-gradient(180deg, #383f53, #1E2128);
+
+
+}
+
+.bg-old-blue {
+  background-color: rgb(30, 33, 40)
+
+  //background-color: rgb(13,15,19)
+}
+
+.bg-dark-sienna {
+  background-color: rgb(61, 8, 20);
+}

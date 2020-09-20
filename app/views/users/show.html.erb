@@ -1,12 +1,3 @@
-<!--  <h1>Hello, <#%= @user.name %></h1>-->
-<!--  <#% if @user.lists.any?  %>-->
-<!--    <p> Here are your lists</p>-->
-<!--  <#% else %>-->
-<!--    <p> You have no lists yet....</p>-->
-<!--  <#% end %>-->
-<!--</body>-->
-<!--</html>-->
-
 <!-- Main content -->
 <section class="content">
   <div class="container-fluid">
@@ -22,16 +13,17 @@
       </div>
       <!-- /.col -->
       <div class="col-md-9">
-        <div class="card card-olive card-outline bg-dark">
-          <div class="card-header p-2 opacity-8">
+        <div class="card card-gray card-outline bg-dark-opacity-8">
+          <div class="card-header p-2">
             <ul class="nav nav-pills">
-              <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Feed</a></li>
-              <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab">Activity</a></li>
-              <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Settings</a></li>
+              <li class="nav-item"><a class="nav-link active" href="#feed" data-toggle="tab">Feed</a></li>
+              <li class="nav-item"><a class="nav-link" href="#activity" data-toggle="tab">Activity</a></li>
+              <li class="nav-item"><a class="nav-link" href="#" data-toggle="tab">Stats</a></li>
+              <li class="nav-item invisible"><a class="nav-link" href="#settings" data-toggle="tab">Settings</a></li>
             </ul>
           </div><!-- /.card-header -->
 
-          <div class="card-body bg-dark">
+          <div class="card-body">
             <div class="tab-content">
               <%= render partial: 'feed' %>
               <!-- /.tab-pane -->

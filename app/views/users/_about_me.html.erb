@@ -1,38 +1,37 @@
-<div class="card card-olive opacity-8" >
+<div class="card card-gray bg-dark-opacity-8" >
   <div class="card-header">
     <h3 class="card-title text-white">About Me</h3>
   </div>
   <!-- /.card-header -->
   <div class="card-body">
-    <strong><i class="fas fa-book mr-1"></i> Books Added</strong>
-
+    <strong><i class="fas fa-book mr-1 text-yellow"></i> Books Added</strong>
     <p class="text-muted">
       You haven't created any book lists yet.
     </p>
 
     <hr>
 
-    <strong><i class="fas fa-map-marker-alt mr-1"></i>Books read so far</strong>
-
+    <strong><i class="fas fa-book-open mr-1 text-blue"></i>Books read so far</strong>
     <p class="text-muted">0  books!</p>
 
     <hr>
 
-    <strong><i class="fas fa-pencil-alt mr-1"></i>Total Lists</strong>
-
+    <strong><i class="fas fa-tags mr-1 text-green"></i> Interests</strong>
     <p class="text-muted">
-      <span class="tag tag-danger">UI Design</span>
-      <span class="tag tag-success">Coding</span>
-      <span class="tag tag-info">Javascript</span>
-      <span class="tag tag-warning">PHP</span>
-      <span class="tag tag-primary">Node.js</span>
+      <span class="badge bg-fuchsia">Russian Literature</span>
+      <span class="badge bg-success">Romance</span>
+      <span class="badge bg-navy">Biography</span>
+      <span class="badge bg-warning">Horror</span>
+      <span class="badge bg-primary">Poetry</span>
+      <span class="badge bg-red">Modern Classic</span>
     </p>
 
     <hr>
 
-    <strong><i class="far fa-file-alt mr-1"></i>Interests</strong>
-
-    <p class="text-muted">No books or authors added.</p>
+    <strong><i class="fas fa-power-off mr-1 text-red"></i>
+      <%= link_to 'Log Out', logout_path, method: :delete, class: 'text-white' %>
+    </strong>
+    <p class="text-muted">Finish your session.</p>
   </div>
   <!-- /.card-body -->
 </div>

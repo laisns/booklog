@@ -1,24 +1,14 @@
-<!DOCTYPE html>
-<html>
-  <head>
-  </head>
-  <body>
-    <% if current_user %>
-      <h1>All your reading lists, in one place.</h1>
-    <% else %>
-      <div>
-        <h1>All your reading lists, in one place.</h1>
-        <div class="about-text">
-          <p>BookLog is a place to store reading books in lists you can edit anytime.
-             Manage past and currrent readings, or create lists for your future books.
-             Save it all filtering by authors, or create custom-themed lists.</p>
-        </div>
-      </div>
-      <%= render partial: 'login'%>
-    <% end %>
+<div class="jumbotron-centered pt-3">
+  <div class="container">
+    <h1 class="display-5 text-center bg-yellow">All you reading lists, in one place.</h1>
+    <p class="text-muted text-sm-right">
+      BookLog is a place to store reading books in lists you can edit anytime.
+      Manage past and current readings, or create lists for your future books.
+      Save it all filtering by authors, or create custom-themed lists.
+    </p>
+    <%= render partial: 'login'%>
+  </div>
+</div>
 
-    <div class="content">
-      <%= yield %>
-    </div>
-  </body>
-</html>
+
+

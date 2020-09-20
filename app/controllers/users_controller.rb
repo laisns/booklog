@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   layout 'application', only: [:new, :create]
+  before_action :set_user, only: [:edit, :update]
+
   def new
     @user = User.new
   end
@@ -7,8 +9,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     @user.login_name.downcase!
-
     if @user.save
+      set_avatar
       flash[:notice] = "Your account was created successfully"
       redirect_to root_path
     else
@@ -18,7 +20,6 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
   end
 
   def show
@@ -27,10 +28,25 @@ class UsersController < ApplicationController
     @user = current_user
   end
 
+  def update
+    bindng.pry
+    updated = user.update!(user_params)
+    set_avatar
+  end
+
   private
 
   def user_params
     params.require(:user).permit(:name, :login_name, :birth_date,
-                                 :password, :password_confirmation)
+                                 :password, :password_confirmation, :avatar)
+  end
+
+  def set_user
+    @user = User.find(params[:id])
+  end
+
+  def set_avatar
+    return unless params[:avatar]
+    UserAvatarService.new(user_params).attach_avatar
   end
 end

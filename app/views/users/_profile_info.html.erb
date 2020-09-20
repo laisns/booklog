@@ -1,28 +1,32 @@
-<div class="card card-olive card-outline opacity-8">
+<!--<a href="https://www.freepik.com/vectors/people">People vector created by pikisuperstar - www.freepik.com</a>-->
+<div class="card card-gray card-outline bg-dark-opacity-8">
   <div class="card-body box-profile">
     <div class="text-center">
-      <i class="fas fa-user-circle fa-7x" alt="User profile picture"></i>
+      <%= avatar_icon %>
     </div>
 
-    <h3 class="profile-username text-center"><%= @user.name %></h3>
+    <h3 class="profile-username text-center">Hello, <%= @user.name %></h3>
 
     <p class="text-muted text-center">@<%= @user.login_name%></p>
 
     <ul class="list-group list-group-unbordered mb-3">
-      <li class="list-group-item bg-dark">
-        <b>Lists</b> <a class="float-right">1,322</a>
+      <li class="list-group-item bg-dark-opacity-8">
+        Lists <a class="float-right text-white"><%= user_total_lists(@user) %></a>
       </li>
-      <li class="list-group-item bg-dark">
-        <b>Favorite Authors</b> <a class="float-right">543</a>
+      <li class="list-group-item bg-dark-opacity-8">
+        Favorite Authors <a class="float-right text-white">543</a>
       </li>
-      <li class="list-group-item bg-dark ">
-        <b>Books Added</b> <a class="float-right">13,287</a>
+      <li class="list-group-item bg-dark-opacity-8">
+        Books Added <a class="float-right text-white">13,287</a>
       </li>
     </ul>
 
-    <a href="#" class="btn btn-block bg-olive">
-      <b><i class="fas fa-plus"></i> Create List</b>
-    </a>
+    <p>
+    <a href="#settings" class="btn btn-block btn-outline-dark bg-maroon" data-toggle="tab"
+         id="profile-settings">
+        <i class="fas fa-cog"></i> Profile Settings
+      </a>
+    </p>
   </div>
   <!-- /.card-body -->
 </div>
