@@ -8,4 +8,9 @@ module ApplicationHelper
   def shallow_args(parent, child)
     child.try(:new_record?) ? [parent, child] : child
   end
+
+  def form_action(object)
+    return "Create New #{object.model_name.human}" unless object.persisted?
+    "Edit #{object.model_name.human}"
+  end
 end

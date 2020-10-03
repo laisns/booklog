@@ -29,7 +29,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    bindng.pry
     updated = user.update!(user_params)
     set_avatar
   end

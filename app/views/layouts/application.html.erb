@@ -8,7 +8,7 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body class="<%= current_user ? 'bg-old-blue' : 'image-background' %>">
-    <% if current_user %>   
+    <% if current_user %>
       <%= render partial: 'layouts/navbar' %>
       <%= render partial: 'layouts/content_header' %>
     <% else %>

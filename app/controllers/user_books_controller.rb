@@ -1,11 +1,50 @@
 class UserBooksController < ApplicationController
+  before_action :get_user_and_list
+  before_action :set_user_book, only: [:edit, :update]
+
   def new
+    @user_book = @user.user_books.build
+  end
+
+  def create
+    @user_book = @user.user_books.build(user_books_params)
+    if @user_book.save
+      flash.now[:notice] = "Book added successfully"
+      add_book_to_list(@list)
+    else
+      flash.now.alert = "Something went wrong. Please try again"
+      render :new
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    binding.pry
+    updated = @user_book.update!(user_books_params)
+    flash.now.alert = "Something went wrong. Please try again" unless updated
+    flash.now[:notice] = "List successfully edited!"
   end
 
   private
 
   def user_books_params
-    params.require(:user_books).permit(:book_status, :favorite_book,
-                                       :favorite_author, :user_id, :book_id)
+    params.permit(:book_status, :favorite_book, :favorite_author,
+                  :user_id, :book_id)
+  end
+
+  def set_user_book
+    @user_book = UserBook.find(params[:id])
+  end
+
+  def get_user_and_list
+    @user = current_user
+    return @list = List.find(params[:list]) if params[:list].present?
+    @list = List.find(params.values.first[:list])
+  end
+
+  def add_book_to_list(list)
+    list.book_lists.create(list_id: list.id, book_id: @user_book.book_id)
   end
 end

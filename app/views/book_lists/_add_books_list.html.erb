@@ -1,38 +1,41 @@
   <div class="card card-red bg-dark-opacity-8">
     <div class="card-header">
-      <h3 class="card-title" id="<%= list.id %>">Add Books to list</h3>
-
+      <h3 class="card-title" id="<#%= @list.id %>">Add Books to list</h3>
       <div class="card-tools">
         <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
           <i class="fas fa-minus"></i></button>
       </div>
     </div>
     <div class="card-body">
-      <%= form_for new_user_book_path do |f| %>
+      <%= form_with url: user_books_path, method: :post do |f| %>
         <div class="form-group">
-          <%= f.label :book_id, 'Name' %>
-          <%= f.text_field :book_id, class: 'form-control', data: { behavior: 'autocomplete' } %>
+          <%= f.label :name, 'Name' %>
+          <%= f.text_field :name, class: 'form-control',
+                           data: { behavior: 'autocomplete' } %>
+          <%= f.hidden_field :book_id, id: 'book_id' %>
+          <%= f.hidden_field :user_id, value: current_user.id %>
+          <%= f.hidden_field :list, value: @list.id %>
         </div>
+        <div class="form-group">
+          <%= f.label :book_status, 'Select a status' %>
+          <%= f.select :book_status, book_status_for_select, {},
+                       class: 'custom-select' %>
+        </div>
+        <div class="form-group">
+          <div class="form-row favorite-checkbox">
+            <div class="col-sm-6">
+              <%= f.check_box :favorite_book %>
+              <span></span>
+              <%= f.label 'Mark this Book as Favorite' %>
+            </div>
+            <div class="col-sm-6">
+              <%= f.check_box :favorite_author %>
+              <span></span>
+              <%= f.label 'Mark this as Favorite Author' %>
+            </div>
+          </div>
+        </div>
+        <%= f.submit 'Save', class: 'btn btn-danger' %>
       <% end %>
-        <div class="form-group">
-          <label for="inputStatus">Status</label>
-          <select class="form-control custom-select">
-            <option selected="" disabled="">Select one</option>
-            <option>To Read</option>
-            <option>Read</option>
-            <option>Reading Now</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="inputClientCompany">Mark this Book as Favorite</label>
-          <input type="text" id="inputClientCompany" class="form-control">
-        </div>
-        <div class="form-group">
-          <label for="inputProjectLeader">Mark as Favorite Author</label>
-          <input type="text" id="inputProjectLeader" class="form-control">
-        </div>
-<!--      <#% end %>-->
     </div>
-    <!-- /.card-body -->
   </div>
-  <!-- /.card -->

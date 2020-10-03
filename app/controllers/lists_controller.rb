@@ -25,7 +25,6 @@ class ListsController < ApplicationController
   end
 
   def update
-    # TODO: implemet validation
     updated = @list.update!(list_params)
     flash.now.alert = "Something went wrong. Please try again" unless updated
     flash.now[:notice] = "List successfully edited!"
@@ -44,7 +43,6 @@ class ListsController < ApplicationController
   end
 
   def set_list
-    # binding.pry
     @list = List.find(params[:id])
   end
 
