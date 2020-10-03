@@ -10,6 +10,11 @@ Rails.application.routes.draw do
     resources :lists, shallow: true
   end
 
+  resources :books do
+    collection do
+      get :search
+    end
+  end
   resources :book_lists, only: [:new, :create, :destroy]
   resources :user_books
   # post 'users' => 'users#create'
