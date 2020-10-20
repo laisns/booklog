@@ -14,7 +14,6 @@ class ListsController < ApplicationController
     @list = @user.lists.build(list_params)
     if @list.save
       flash.now[:notice] = "New list created successfully"
-      redirect_to user_path(current_user)
     else
       flash.now.alert = "Something went wrong. Please try again"
       render :new
@@ -28,7 +27,6 @@ class ListsController < ApplicationController
     updated = @list.update!(list_params)
     flash.now.alert = "Something went wrong. Please try again" unless updated
     flash.now[:notice] = "List successfully edited!"
-    redirect_to user_path(@user) if updated
   end
 
   def show;end

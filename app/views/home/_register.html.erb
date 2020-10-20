@@ -1,4 +1,4 @@
-<div class="custom-card-body">
+<div class="custom-card-body form-centered">
   <div class="sign-in-up-form form-group">
     <h4>Register a new account</h4>
     <%= form_for User.new do |f| %>
@@ -16,7 +16,7 @@
       </div>
       <%= f.hidden_field :avatar %>
       <div>
-        <%= f.button 'SIGN UP' %>
+        <%= f.button 'SIGN UP', class: 'bg-navy' %>
       </div>
 
     <% end %>

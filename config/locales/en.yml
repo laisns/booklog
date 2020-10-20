@@ -31,3 +31,13 @@
 
 en:
   hello: "Hello world"
+  activity:
+    list:
+      create: "created a new list"
+      update: "updated the list"
+      destroy: 'has deleted a list'
+    user:
+      update: 'has updated his profile info'
+    user_book:
+      create: 'has added a new book to his books'
+      update: 'has updated book status'

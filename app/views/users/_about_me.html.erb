@@ -5,15 +5,11 @@
   <!-- /.card-header -->
   <div class="card-body">
     <strong><i class="fas fa-book mr-1 text-yellow"></i> Books Added</strong>
-    <p class="text-muted">
-      You haven't created any book lists yet.
-    </p>
-
+    <p class="text-muted"><%= books_added_info(@user)%></p>
     <hr>
 
     <strong><i class="fas fa-book-open mr-1 text-blue"></i>Books read so far</strong>
-    <p class="text-muted">0  books!</p>
-
+    <p class="text-muted"><%= "#{@user.user_books.by_book_status(2).size} books!"%></p>
     <hr>
 
     <strong><i class="fas fa-tags mr-1 text-green"></i> Interests</strong>
@@ -25,7 +21,6 @@
       <span class="badge bg-primary">Poetry</span>
       <span class="badge bg-red">Modern Classic</span>
     </p>
-
     <hr>
 
     <strong><i class="fas fa-power-off mr-1 text-red"></i>

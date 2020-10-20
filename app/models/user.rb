@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  include PublicActivity::Model
+  tracked
+
   has_one_attached :avatar
   has_many :books, through: :user_books
   has_many :lists, dependent: :destroy

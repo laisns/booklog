@@ -21,9 +21,9 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
-gem 'awesome_print'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
+# Front-end
 gem 'bootstrap-sass'
 gem 'bootstrap', '~> 4.1.3'
 gem 'font-awesome-rails'
@@ -31,17 +31,21 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
-gem 'capybara'
-gem 'factory_bot'
+# Others
+gem 'public_activity'
+gem 'prawn'
+gem 'cancancan'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'awesome_print'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'factory_bot'
   gem 'pry-rails'
   gem 'pry-byebug'
+  gem 'rubocop'
   gem 'faker'
   gem 'httparty'
-  gem 'prawn'
 end
 
 group :development do
@@ -54,6 +58,7 @@ group :development do
 end
 
 group :test do
+  gem 'capybara'
   gem 'database_cleaner-active_record'
   gem 'shoulda-matchers', '~> 4.0'
   gem 'rspec'

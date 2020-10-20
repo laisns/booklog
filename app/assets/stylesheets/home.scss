@@ -10,6 +10,11 @@
   background-size: cover;
   height: 600px;
 }
+.image-background nav {
+  background-color: rgb(56, 63, 83);
+  margin-bottom: 40px;
+}
+
 
 h1 {
   background-color: rgba(234, 230, 226, 0.9);
@@ -21,7 +26,7 @@ h1 {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
-  margin-top: 170px;
+  margin-top: 50px;
   height: 40%;
   width: 20%;
   position: fixed;
@@ -89,13 +94,18 @@ h1 {
 }
 
 .jumbotron-centered {
-  background-color: rgba(52,58,64, 0.8);
+  //background-color: rgb(52,58,64);
   padding-right: 15px;
   padding-left: 45px;
   margin-right: auto;
   margin-left: auto;
-  margin-top: 50px;
+  //margin-top: 50px;
   height: 80%;
   width: 80%;
   position: center;
+  box-shadow: 0 0 15px 9px rgba(139, 134, 134, 0.59);
+}
+
+.form-centered {
+  margin-top: 20px;
 }
