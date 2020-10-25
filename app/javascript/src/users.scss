@@ -7,6 +7,8 @@
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 @import '~easy-autocomplete/dist/easy-autocomplete.min';
 @import '~easy-autocomplete/dist/easy-autocomplete.themes.min';
+@import '~jsgrid/dist/jsgrid-theme.min';
+@import "~jsgrid/dist/jsgrid.min";
 
 .nav-pills .nav-link{border-radius:.25rem}.nav-pills .nav-link.active,
   .nav-pills .show>.nav-link{
@@ -52,4 +54,14 @@
 .bg-old-blue {
   background-color: rgb(30, 33, 40)
   //background-color: rgb(13,15,19)
+}
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
 }

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'home' => 'home#index'
   root 'home#index'
   get 'search' => 'home#search', as: :search
+  get 'search_results' => 'home#search_results', as: :search_results
   post 'get_search_response' => 'home#get_search_response', as: :get_search_response
   get 'register' => 'users#new'
   get 'edit_profile' => 'users#edit'

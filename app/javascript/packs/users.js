@@ -12,6 +12,7 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require("easy-autocomplete")
+require("jsgrid/dist/jsgrid.min")
 
 document.addEventListener("turbolinks:load", () => {
     $('[data-toggle="tooltip"]').tooltip()

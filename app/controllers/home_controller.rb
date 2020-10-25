@@ -9,14 +9,25 @@ class HomeController < ApplicationController
   end
 
   def search
+    @user = current_user
+  end
+
+  def search_results
+    @user = current_user
+    q = params[:q]
+    @results = Book.joins(:author).where("title LIKE ? OR authors.name LIKE ?",
+                                         "%#{q}%", "%#{q}%")
   end
 
   def get_search_response
-    binding.pry
+    respond_to do |format|
+      format.html
+      format.json  { render :json => @results }
+    end
     title = params[:isbn]
-    # response = HTTParty.post("https://openlibrary.org/api/books?bibkeys=ISBN:#{isbn}&jscmd=data&format=json")
+    response = HTTParty.post("https://openlibrary.org/api/books?bibkeys=ISBN:#{isbn}&jscmd=data&format=json")
     response = HTTParty.post("https://openlibrary.org/search.json?title=#{title}")
     resp = response
-    redirect_to home_path
+    redirect_to search_results_path
   end
 end
