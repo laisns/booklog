@@ -1,12 +1,12 @@
 <!--original id= timeline-->
 <div class="tab-pane" id="activity">
   <div class="timeline timeline-inverse">
-    <%= user_recent_activity(@user).map do |date, activities| %>
+    <% user_recent_activity(@user).map do |date, activities| %>
       <div class="time-label" >
-        <span class="bg-gradient-danger"><%= date.strftime("%b. %d %Y").to_s %></span>
+        <span class="bg-gradient-lightblue"><%= date.strftime("%b. %d %Y").to_s %></span>
       </div>
       <div>
-        <%= activities.map do |activity| %>
+        <% activities.map do |activity| %>
           <i class="fas fa-arrow-right"></i>
           <div class="timeline-item">
             <span class="time"><i class="far fa-clock"></i>

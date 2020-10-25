@@ -34,7 +34,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 # Others
 gem 'public_activity'
 gem 'prawn'
-gem 'cancancan'
+gem 'pundit'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
