@@ -1,0 +1,19 @@
+<tbody>
+  <% books.map do |book| %>
+    <tr>
+      <td>
+        <%= image_tag("generic-book-cover.jpg", class: 'img-thumbnail w-25 h-25') %>
+      </td>
+      <td>
+        <p class="font-italic mb-0"><%= book.title %></p>
+        <p class="mb-0">by <%= link_to book.author.name, author_path(book.author.id) %></p>
+        <p class="mb-0">First Published/Released: <%= book.release_year %></p>
+        <p class="mb-0"><%= book.language %></p>
+        <p class="font-italic mb-0"><%= book.genre.description %></p>
+      </td>
+      <td>
+        <button class="btn btn-success">add to list</button>
+      </td>
+    </tr>
+  <% end %>
+</tbody>

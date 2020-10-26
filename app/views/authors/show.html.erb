@@ -1,0 +1,75 @@
+<div class="w-75 mx-auto">
+  <section class="content ">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 ">
+          <div class="callout callout-info bg-gray-light">
+            <h5><i class="fas fa-info"></i> Note:</h5>
+            The information on this page is retrieved from openLibrary. Link to
+            goodread and authors website.
+          </div>
+          <div class="invoice p-3 mb-3 bg-dark-opacity-8">
+            <div class="row">
+              <div class="col-12">
+                <h2>
+                  <%= @author.name %>
+                  <small class="float-right"><%= @author.books.size %> books</small>
+                </h2>
+              </div>
+            </div>
+            <div class="row invoice-info">
+              <div class="col-sm-4 invoice-col">
+                <address>
+                  <br>
+                  <strong>Born: </strong><br>
+                  Birth Date: <br><br>
+                  20 people have marked this author as favorite<br>
+                  Currently, there are <%= @author.books.size %> books with
+                  <strong><%= @author.name %></strong> registered as author.
+                  <a href="#">Add more books</a>
+                </address>
+              </div>
+              <div class="col-sm-4 invoice-col">
+                <address>
+                  <br>
+                  <%= show_nationality(@author) %><br>
+                  <%= show_birth_date(@author) %><br>
+                </address>
+              </div>
+            </div>
+            <table class="table table-head-fixed bg-old-blue text-nowrap">
+              <%= render partial: 'books/books_table', locals: { books: @author.books } %>
+            </table>
+            <div class="row">
+              <div class="col-6">
+                <p class="lead">Related tags to this author:</p>
+                  <span class="badge bg-fuchsia">Russian Literature</span>
+                  <span class="badge bg-success">Romance</span>
+                  <span class="badge bg-navy">Biography</span>
+                  <span class="badge bg-warning">Horror</span>
+                  <span class="badge bg-primary">Poetry</span>
+                  <span class="badge bg-red">Modern Classic</span>
+                <p class="text-muted well well-sm shadow-none" style="margin-top: 10px;">
+                  Interest tags influence your recomendations. The more tags you
+                  add, more similar to your interests books and authors to your profile.
+                </p>
+              </div>
+            </div>
+            <!-- this row will not appear when printing -->
+            <div class="row no-print">
+              <div class="col-12">
+                <a href="invoice-print.html" target="_blank" class="btn btn-default"><i class="fas fa-print"></i> Print</a>
+                <button type="button" class="btn btn-success float-right"><i class="far fa-credit-card"></i> Submit
+                  Payment
+                </button>
+                <button type="button" class="btn btn-primary float-right" style="margin-right: 5px;">
+                  <i class="fas fa-download"></i> Generate PDF
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

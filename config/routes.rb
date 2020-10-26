@@ -16,6 +16,8 @@ Rails.application.routes.draw do
       get :search
     end
   end
+
+  resources :authors
   resources :book_lists, only: [:new, :create, :destroy]
   resources :user_books
   # post 'users' => 'users#create'
