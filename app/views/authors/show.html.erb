@@ -26,7 +26,12 @@
                   20 people have marked this author as favorite<br>
                   Currently, there are <%= @author.books.size %> books with
                   <strong><%= @author.name %></strong> registered as author.
-                  <a href="#">Add more books</a>
+                  <%= link_to 'Add more books', new_book_path(author: @author.id),
+                              remote: true, data: { toggle: 'modal',
+                                                    target: '#new_books_modal' }%>
+                  <div id="new_books_modal" class="modal" role="dialog"
+                       aria-labelledby="myModalLabel" aria-hidden="true">
+                  </div>
                 </address>
               </div>
               <div class="col-sm-4 invoice-col">

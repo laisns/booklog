@@ -20,14 +20,14 @@ class HomeController < ApplicationController
   end
 
   def get_search_response
-    respond_to do |format|
-      format.html
-      format.json  { render :json => @results }
-    end
-    title = params[:isbn]
-    response = HTTParty.post("https://openlibrary.org/api/books?bibkeys=ISBN:#{isbn}&jscmd=data&format=json")
-    response = HTTParty.post("https://openlibrary.org/search.json?title=#{title}")
-    resp = response
+    # respond_to do |format|
+    #   format.html
+    #   format.json  { render :json => @results }
+    # end
+    title = params[:q]
+    response = HTTParty.get("https://openlibrary.org/search.json?title=#{title}")
+    work_key = response['docs'].first['key']
+    # work =
     redirect_to search_results_path
   end
 end

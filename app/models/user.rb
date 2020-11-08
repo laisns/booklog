@@ -9,7 +9,8 @@ class User < ApplicationRecord
 
   has_secure_password
 
-  validates :login_name, presence: true, uniqueness: true
+  validates :name, presence: true
+  validates :login_name, presence: true, uniqueness: { case_sensitive: false }
 end
 
 def recent_lists

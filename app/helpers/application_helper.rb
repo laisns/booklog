@@ -13,4 +13,10 @@ module ApplicationHelper
     return "Create New #{object.model_name.human}" unless object.persisted?
     "Edit #{object.model_name.human}"
   end
+
+  def flash_type(type)
+    types = { notice: "bg-info", alert: "bg-alert", success: "bg-success",
+              welcome: "bg-olive", warning: "bg-danger" }
+    types[type.to_sym]
+  end
 end

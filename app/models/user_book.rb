@@ -14,8 +14,8 @@ class UserBook < ApplicationRecord
   TO_READ = 0
   READING = 1
   READ = 2
-end
 
-def read
-  self.book_status == READ
+  def read
+    self.book_status == READ
+  end
 end

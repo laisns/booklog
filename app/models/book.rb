@@ -4,4 +4,7 @@ class Book < ApplicationRecord
   has_many :book_editions, dependent: :destroy
   has_many :book_lists
   has_many :lists, through: :book_lists
+
+  validates :title, presence: true, uniqueness: true
+  validates :genre_id, presence: true
 end

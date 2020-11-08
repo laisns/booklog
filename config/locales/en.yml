@@ -41,3 +41,10 @@ en:
     user_book:
       create: 'has added a new book to his books'
       update: 'has updated book status'
+  flash:
+    messages:
+      warning: 'Error'
+      notice: 'Information'
+      alert: 'Alert'
+      welcome: 'Welcome!'
+      success: 'Success'

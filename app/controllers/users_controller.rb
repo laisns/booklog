@@ -11,11 +11,11 @@ class UsersController < ApplicationController
     @user.login_name.downcase!
     if @user.save
       set_avatar
-      flash[:notice] = "Your account was created successfully"
       redirect_to root_path
+      flash[:notice] = "Your account was created successfully"
     else
-      flash.now.alert = "Something went wrong. Please try again"
       render :new
+      flash.now.alert = "Something went wrong. Please try again"
     end
   end
 

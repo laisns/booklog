@@ -4,6 +4,10 @@ $(document).ready(function (){
         $('.nav a').filter('a[href="#'+target[1]+'"]').tab('show');
     });
 
+    $('.toastBtn').on('click', function (e) {
+        $(this).closest('.toast').toast('hide');
+    });
+
     let autoCompleteInput = $("input[data-behavior='autocomplete']");
     autoCompleteInput.on('change paste keyup', function () {
         var fieldValue = $(this);
