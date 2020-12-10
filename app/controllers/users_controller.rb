@@ -23,14 +23,31 @@ class UsersController < ApplicationController
   end
 
   def show
-    # @user = User.find(params[:id])
-    # @user = User.find_by(login_name: params[:login_name])
     @user = current_user
   end
 
   def update
-    updated = user.update!(user_params)
-    set_avatar
+    if params[:password].present? && params[:password_confirmation].present?
+      update_password(@user, params[:password], params[:password_confirmation])
+    end
+    updated = @user.update(user_params.except(:password, :password_confirmation))
+    if updated
+      set_avatar
+      redirect_to user_path(@user)
+      flash[:notice] = "Your account was created successfully"
+    else
+      render :show
+      flash.now.alert = "Something went wrong. Please try again"
+    end
+  end
+
+  def update_password(user, password, password_confirmation)
+    error_msg = I18n.t('active_record.users.validations.password_mismatch')
+    changed_password = user.update(password: password,
+                                   password_confirmation: password_confirmation)
+    flash[:notice] = error_msg unless changed_password
+    flash[:notice] = 'Password was updated!'
+    redirect_to user_path(user)
   end
 
   private
@@ -41,7 +58,7 @@ class UsersController < ApplicationController
   end
 
   def set_user
-    @user = User.find(params[:id])
+    @user = User.find_by_login_name(params[:id])
   end
 
   def set_avatar

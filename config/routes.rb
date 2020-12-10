@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   post 'get_search_response' => 'home#get_search_response', as: :get_search_response
   get 'register' => 'users#new'
   get 'edit_profile' => 'users#edit'
-  resources :users, except: [:new, :edit, :destroy] do
+  resources :users, except: [:destroy] do
     resources :lists, shallow: true
   end
 

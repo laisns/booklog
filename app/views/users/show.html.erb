@@ -1,17 +1,11 @@
-<!-- Main content -->
 <section class="content">
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-3 alternative-font">
-        <!-- Profile Image -->
         <%= render partial: 'profile_info' %>
-        <!-- /.card -->
 
-        <!-- About Me Box -->
         <%= render partial: 'about_me' %>
-        <!-- /.card -->
       </div>
-      <!-- /.col -->
       <div class="col-md-9">
         <div class="card card-gray card-outline bg-dark-opacity-8">
           <div class="card-header p-2">
@@ -21,29 +15,19 @@
               <li class="nav-item"><a class="nav-link" href="#" data-toggle="tab">Stats</a></li>
               <li class="nav-item invisible"><a class="nav-link" href="#settings" data-toggle="tab">Settings</a></li>
             </ul>
-          </div><!-- /.card-header -->
-
+          </div>
           <div class="card-body">
             <div class="tab-content">
               <%= render partial: 'feed' %>
-              <!-- /.tab-pane -->
-              <%= render partial: 'activity' %>
-              <!-- /.tab-pane -->
-              <%= render partial: 'settings' %>
-              <!-- /.tab-pane -->
-            </div>
-            <!-- /.tab-content -->
-          </div>
-          <!-- /.card-body -->
-        </div>
-        <!-- /.nav-tabs-custom -->
-      </div>
-      <!-- /.col -->
-    </div>
-    <!-- /.row -->
-  </div><!-- /.container-fluid -->
-</section>
-<!-- /.content -->
-</div>
-<!-- /.content-wrapper -->
 
+              <%= render partial: 'activity' %>
+
+              <%= render partial: 'settings' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>

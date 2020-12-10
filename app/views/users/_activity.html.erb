@@ -1,7 +1,6 @@
-<!--original id= timeline-->
 <div class="tab-pane" id="activity">
   <div class="timeline timeline-inverse">
-    <% user_recent_activity(@user).map do |date, activities| %>
+    <% @user.recent_activity.map do |date, activities| %>
       <div class="time-label" >
         <span class="bg-gradient-lightblue"><%= date.strftime("%b. %d %Y").to_s %></span>
       </div>
