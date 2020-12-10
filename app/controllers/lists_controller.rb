@@ -13,10 +13,11 @@ class ListsController < ApplicationController
   def create
     @list = @user.lists.build(list_params)
     if @list.save
-      flash.now[:notice] = "New list created successfully"
+      redirect_to new_user_book_path(list: @list.id)
+      flash[:notice] = "New list created successfully"
     else
-      flash.now.alert = "Something went wrong. Please try again"
       render :new
+      flash.now.alert = "Something went wrong. Please try again"
     end
   end
 
@@ -26,7 +27,8 @@ class ListsController < ApplicationController
   def update
     updated = @list.update!(list_params)
     flash.now.alert = "Something went wrong. Please try again" unless updated
-    flash.now[:notice] = "List successfully edited!"
+    redirect_to new_user_book_path(list: @list.id)
+    flash[:notice] = "List successfully edited!"
   end
 
   def show;end

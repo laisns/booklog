@@ -19,4 +19,8 @@ module ApplicationHelper
               welcome: "bg-olive", warning: "bg-danger" }
     types[type.to_sym]
   end
+
+  def selected_icon(selected)
+    content_tag(:i, "", class: "fas fa-check") if selected
+  end
 end

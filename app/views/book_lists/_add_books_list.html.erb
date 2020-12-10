@@ -7,7 +7,7 @@
       </div>
     </div>
     <div class="card-body">
-      <%= form_with url: user_books_path, method: :post do |f| %>
+      <%= form_with url: user_books_path, method: :post, local: true do |f| %>
         <div class="form-group">
           <%= f.label :name, 'Name' %>
           <%= f.text_field :name, class: 'form-control',

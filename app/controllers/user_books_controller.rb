@@ -3,17 +3,17 @@ class UserBooksController < ApplicationController
   before_action :set_user_book, only: [:edit, :update]
 
   def new
-    @user_book = @user.user_books.build
+    # @user_book = @user.user_books.build
   end
 
   def create
-    @user_book = @user.user_books.build(user_books_params)
-    if @user_book.save
-      flash.now[:notice] = "Book added successfully"
-      add_book_to_list(@list)
+    @user_book = NewBookToListService.new(user_books_params, @list)
+    @user_book.add_new_user_book_to_list
+    redirect_to new_user_book_path(list: @list.id)
+    if @user_book.errors.empty?
+      flash[:success] = "Book added successfully"
     else
-      flash.now.alert = "Something went wrong. Please try again"
-      render :new
+      flash[:warning] = "#{@user_book.errors.join("\n")}"
     end
   end
 
@@ -21,7 +21,6 @@ class UserBooksController < ApplicationController
   end
 
   def update
-    binding.pry
     updated = @user_book.update!(user_books_params)
     flash.now.alert = "Something went wrong. Please try again" unless updated
     flash.now[:notice] = "List successfully edited!"

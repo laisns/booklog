@@ -48,3 +48,8 @@ en:
       alert: 'Alert'
       welcome: 'Welcome!'
       success: 'Success'
+  active_record:
+    users:
+      validations:
+        invalid_password: 'You entered a invalid password'
+        password_mismatch: "Password doesn't match password confirmation"
