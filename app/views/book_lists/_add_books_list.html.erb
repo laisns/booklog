@@ -22,15 +22,19 @@
                        class: 'custom-select' %>
         </div>
         <div class="form-group">
-          <div class="form-row favorite-checkbox">
-            <div class="col-sm-6">
+          <div class="form-row">
+            <div class="col-sm-6 favorite-checkbox">
+              <i class="far fa-heart text-red icon-non-checked"></i>
+              <i class="fas fa-heart text-red icon-checked" hidden="hidden"></i>
               <%= f.check_box :favorite_book %>
-              <span></span>
+              <span class="label"></span>
               <%= f.label 'Mark this Book as Favorite' %>
             </div>
-            <div class="col-sm-6">
+            <div class="col-sm-6 favorite-checkbox">
+              <i class="far fa-heart text-red icon-non-checked"></i>
+              <i class="fas fa-heart text-red icon-checked" hidden="hidden"></i>
               <%= f.check_box :favorite_author %>
-              <span></span>
+              <span class="label"></span>
               <%= f.label 'Mark this as Favorite Author' %>
             </div>
           </div>
