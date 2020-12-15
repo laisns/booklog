@@ -10,6 +10,8 @@
 @import '~jsgrid/dist/jsgrid-theme.min';
 @import "~jsgrid/dist/jsgrid.min";
 @import "~flatpickr/dist/flatpickr.min";
+@import "~datatables.net-bs4/css/dataTables.bootstrap4.min";
+//@import "~datatables.net-responsive-bs4/css/responsive.bootstrap4.min";
 
 .nav-pills .nav-link{border-radius:.25rem}.nav-pills .nav-link.active,
   .nav-pills .show>.nav-link{
@@ -71,3 +73,7 @@
   display: none;
 }
 
+.profile-picture {
+  width: 45%;
+  height: 45%;
+}
