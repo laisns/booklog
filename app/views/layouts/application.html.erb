@@ -14,7 +14,11 @@
     <% else %>
       <%= render partial: 'layouts/navbar_with_logo'%>
     <% end %>
+
+    <%= render partial: 'layouts/flash_messages' %>
+
     <title>Booklog</title>
+
     <%= yield %>
   </body>
 </html>

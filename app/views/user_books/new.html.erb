@@ -1,23 +1,11 @@
-<section class="content">
+<section class="content user_book_new-content">
+  <h2 class="text-white">Add Books to List</h2>
+  <p class="text-small text-gray">
+    <%= @list.name %>
+    <%= link_to 'Back to edit list', edit_list_path(@list), class: 'btn btn-info btn-xs'%>
+  </p>
   <div class="row mr-1 ml-1">
     <div class="col-md-6 text-white">
-      <div class="card card-blue bg-dark-opacity-8">
-        <div class="card-header">
-          <h3 class="card-title">List Info</h3>
-          <div class="card-tools">
-            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
-              <i class="fas fa-minus"></i></button>
-          </div>
-        </div>
-        <div class="card-body" style="display: block;">
-          <div class="form-group">
-            <textarea class="form-control bg-dark" disabled><%= @list.name %></textarea>
-          </div>
-          <div class="form-group">
-            <%= link_to 'Back to edit list', edit_list_path(@list), class: 'btn btn-primary'%>
-          </div>
-        </div>
-      </div>
       <%= render partial: 'book_lists/add_books_list' %>
     </div>
     <%= render partial: 'book_lists/added_books_list',

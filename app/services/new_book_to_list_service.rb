@@ -40,5 +40,6 @@ class NewBookToListService
 
   def add_book_to_list(list)
     list.book_lists.create!(list_id: list.id, book_id: @book_id.to_i)
+    list.update!(updated_at: Time.zone.now)
   end
 end

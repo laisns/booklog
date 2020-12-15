@@ -4,6 +4,9 @@
       <td>
         <%= image_tag("generic-book-cover.jpg", class: 'img-thumbnail w-25 h-25') %>
       </td>
+      <td><p class="text-wrap text-truncate small"style="width: 14rem;">
+        <em><%= book.synopsis if book.synopsis.present? %></em>
+      </p></td>
       <td>
         <p class="font-italic mb-0"><%= book.title %></p>
         <p class="mb-0">by <%= link_to book.author.name, author_path(book.author.id) %></p>

@@ -9,6 +9,7 @@
   background: url('book_background.jpeg') no-repeat center center;
   background-size: cover;
   height: 600px;
+  position: relative;
 }
 .image-background nav {
   background-color: rgb(56, 63, 83);
@@ -24,12 +25,13 @@ h1 {
   background-color: rgba(234, 230, 226, 0.9);
   padding-right: 15px;
   padding-left: 15px;
-  margin-right: auto;
+  //margin-right: auto;
   margin-left: auto;
-  margin-top: 50px;
+  //margin-top: 10px;
   height: 40%;
   width: 20%;
-  position: fixed;
+  //position: fixed;
+  //float: right;
 }
 
 .custom-card-body {

@@ -9,7 +9,8 @@
       <div class="card-header bg-gray-light">
         <h3 class="card-title"><i class="fas fa-exclamation-triangle text-danger"></i>
           Couldn't find what you are looking for? Search
-          <a href="#">elsewhere</a> or <a href="#">manually insert data.</a></h3>
+          <a href="#">elsewhere</a> or <%= link_to 'manually add data', new_author_path %>
+        </h3>
         <div class="card-tools">
           <div class="input-group input-group-sm" style="width: 150px;">
             <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
@@ -20,13 +21,12 @@
         </div>
       </div>
       <div class="card-body p-0">
+        <%= "No results matches your search" unless @results.present? %>
         <table class="table table-head-fixed table-hover table-dark text-nowrap">
           <%= render partial: 'books/books_table', locals: { books: @results } %>
         </table>
       </div>
-      <!-- /.card-body -->
     </div>
-    <!-- /.card -->
   </div>
 </div>
 </body>

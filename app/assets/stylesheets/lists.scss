@@ -37,16 +37,34 @@ div.col-md-6 .form-group input, .form-group input:focus, .form-group textarea,
   //background: #1a1e27 linear-gradient(180deg, #1d1e26, #0d0f13);
   //background: #383f53 linear-gradient(180deg, #1E2128, #1c1f29);
   background: #1a1e27 linear-gradient(180deg, #383f53, #1E2128);
-
-
 }
 
 .bg-old-blue {
   background-color: rgb(30, 33, 40)
-
   //background-color: rgb(13,15,19)
 }
 
 .bg-dark-sienna {
   background-color: rgb(61, 8, 20);
+}
+
+.lists-table-content {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-list-content {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.user_book_new-content {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.card-darkblue {
+  background-color: #2d4b54;
 }
