@@ -1,0 +1,65 @@
+<section class="content lists-table-content">
+  <div class="card">
+    <div class="card-header bg-dark">
+      <h3 class="card-title"><%= "#{@user.name}'s lists" %></h3>
+      <div class="card-tools">
+        <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+          <i class="fas fa-minus"></i>
+        </button>
+<!--        <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">-->
+<!--          <i class="fas fa-times"></i>-->
+<!--        </button>-->
+      </div>
+    </div>
+    <div class="card-body p-0 pt-3 bg-old-blue text-white" style="display: block;">
+      <table class="table" id="lists-table">
+        <thead>
+          <tr>
+            <th style="width: 1%">#</th>
+            <th style="width: 20%">List Name</th>
+            <th style="width: 10%">Last Updated at</th>
+            <th style="width: 15%">Reading Progress</th>
+            <th style="width: 8%" class="text-center">Status</th>
+            <th style="width: 20%"></th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @lists.map do |list| %>
+          <tr>
+            <td>#</td>
+            <td>
+              <a><%= list.name %></a><br>
+              <small>Created <%= list.created_at.to_date %></small>
+            </td>
+            <td><%= list.updated_at.to_date %></td>
+            <td class="project_progress">
+              <div class="progress progress-sm">
+                <div class="progress-bar bg-green" role="progressbar"
+                     aria-valuenow="87" aria-valuemin="0" aria-valuemax="100"
+                     style="width: 87%">
+                </div>
+              </div>
+              <small>87% Complete</small>
+            </td>
+            <td class="project-state">
+              <span class="badge badge-success">Success</span>
+            </td>
+            <td class="project-actions text-right">
+              <a class="btn btn-outline-info btn-sm" href="#"><i class="fas fa-folder"></i>
+                View
+              </a>
+              <%= link_to edit_list_path(list), class: 'btn btn-outline-success btn-sm' do %>
+                <i class="fas fa-pencil-alt"></i> Edit
+              <% end %>
+              <%= link_to list_path(list), method: :delete, data: { confirm: "Delete this list?" },
+                          class: 'btn btn-outline-danger btn-sm' do %>
+                <i class="fas fa-trash"></i> Delete
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

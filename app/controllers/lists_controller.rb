@@ -33,7 +33,15 @@ class ListsController < ApplicationController
 
   def show;end
 
-  def destroy;end
+  def destroy
+    current_list = @list.destroy
+    redirect_to user_lists_path(@user)
+    if current_list.destroyed?
+      flash[:success] = "List deleted successfully"
+    else
+      flash[:alert] = "Something went wrong. Please try again"
+    end
+  end
 
   private
 

@@ -3,6 +3,8 @@ class BookList < ApplicationRecord
   belongs_to :book
 
   delegate :user, to: :list
+  delegate :author, to: :book
+  delegate :title, to: :book
 
   validates_uniqueness_of :book_id, scope: :list_id
 end

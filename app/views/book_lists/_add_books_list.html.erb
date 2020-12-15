@@ -1,4 +1,4 @@
-  <div class="card card-red bg-dark-opacity-8">
+  <div class="card card-red bg-old-blue">
     <div class="card-header">
       <h3 class="card-title" id="<#%= @list.id %>">Add Books to list</h3>
       <div class="card-tools">
@@ -6,7 +6,7 @@
           <i class="fas fa-minus"></i></button>
       </div>
     </div>
-    <div class="card-body">
+    <div class="card-body bg-dark-opacity-8">
       <%= form_with url: user_books_path, method: :post, local: true do |f| %>
         <div class="form-group">
           <%= f.label :name, 'Name' %>
