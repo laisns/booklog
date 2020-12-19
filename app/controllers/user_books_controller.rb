@@ -1,6 +1,11 @@
 class UserBooksController < ApplicationController
-  before_action :get_user_and_list
+  before_action :get_user
+  before_action :get_list, only: [:create]
   before_action :set_user_book, only: [:edit, :update]
+
+  def index
+    @user_books = @user.user_books
+  end
 
   def new
     # @user_book = @user.user_books.build
@@ -36,8 +41,11 @@ class UserBooksController < ApplicationController
     @user_book = UserBook.find(params[:id])
   end
 
-  def get_user_and_list
+  def get_user
     @user = current_user
+  end
+
+  def get_list
     return @list = List.find(params[:list]) if params[:list].present?
     @list = List.find(params.values.first[:list])
   end

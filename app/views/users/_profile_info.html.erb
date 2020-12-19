@@ -4,7 +4,7 @@
     <div class="text-center">
       <%= avatar_icon %>
     </div>
-    <%= content_tag :h3, "Hello, #{@user.name}", class: ['profile-username', 'text-center'] %>
+    <%= content_tag :h4, "Hello, #{@user.name}", class: 'profile-username text-center' %>
     <p class="text-muted text-center">@<%= @user.login_name%></p>
 
     <ul class="list-group list-group-unbordered mb-3">
@@ -15,7 +15,7 @@
         Favorite Authors <a class="float-right text-white"><%= user_favorite_authors(@user) %></a>
       </li>
       <li class="list-group-item bg-dark-opacity-8">
-        Books Added <a class="float-right text-white"><%= user_total_books(@user) %></a>
+        Favorite Books <a class="float-right text-white"><%= user_favorite_books(@user) %></a>
       </li>
     </ul>
     <p>

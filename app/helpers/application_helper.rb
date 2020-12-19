@@ -20,6 +20,13 @@ module ApplicationHelper
     types[type.to_sym]
   end
 
+  def flash_icon_type(type)
+    types = { notice: "fas fa-info", warning: "fas fa-exclamation-triangle",
+              success: "fas fa-check", welcome: "fab fa-ello",
+              alert: "fas fa-exclamation" }
+    types[type.to_sym]
+  end
+
   def selected_icon(selected)
     content_tag(:i, "", class: "fas fa-check") if selected
   end

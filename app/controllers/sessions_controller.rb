@@ -6,10 +6,9 @@ class SessionsController < ApplicationController
     user = User.find_by(login_name: params[:session][:login_name].downcase)
     if user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id.to_s
-      redirect_to user_path(user.login_name), notice: 'Logged In!'
+      redirect_to user_path(user.login_name), welcome: 'Logged In!'
     else
-      # render 'home/index'
-      flash.now[:warning] = "Incorrect user or password, try again"
+      redirect_to root_path, alert: 'Incorrect user or password, try again'
     end
   end
 

@@ -11,16 +11,16 @@ class UsersController < ApplicationController
     @user.login_name.downcase!
     if @user.save
       set_avatar
+      session[:user_id] = @user.id
       redirect_to root_path
       flash[:notice] = "Your account was created successfully"
     else
-      render :new
-      flash.now.alert = "Something went wrong. Please try again"
+      redirect_to register_path
+      flash[:alert] = "Something went wrong. Please try again #{@user.errors.messages}"
     end
   end
 
-  def edit
-  end
+  def edit;end
 
   def show
     @user = current_user
