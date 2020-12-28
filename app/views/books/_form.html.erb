@@ -8,7 +8,7 @@
     </div>
     <%= form_for @book do |f| %>
       <div class="modal-body">
-        <p>Add New Book for <strong><%= @author.name %></strong></p>
+        <p><%= form_action(@book) %> for <strong><%= @author.name %></strong></p>
         <%= f.hidden_field :author_id, { value: @author.id } %>
         <div class="form-group">
           <%= f.text_area :title, class: 'form-control bg-old-blue',

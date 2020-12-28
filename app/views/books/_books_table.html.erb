@@ -15,7 +15,10 @@
         <p class="font-italic mb-0"><%= book.genre.description %></p>
       </td>
       <td>
-        <button class="btn btn-success">add to list</button>
+        <button class="btn btn-outline-light bg-lightblue mb-1">add to list</button><br>
+        <%= link_to 'edit info', edit_book_path(book), remote: true,
+                    data: { toggle: 'modal', target: '#new_books_modal' },
+                    class: 'btn btn-outline-light bg-lightblue' %>
       </td>
     </tr>
   <% end %>

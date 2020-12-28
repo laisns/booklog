@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   def new
+    user = User.find_by(login_name: params[:session][:login_name].downcase)
   end
 
   def create
@@ -8,7 +9,8 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id.to_s
       redirect_to user_path(user.login_name), welcome: 'Logged In!'
     else
-      redirect_to root_path, alert: 'Incorrect user or password, try again'
+      flash.now[:alert] = 'Incorrect user or password, try again'
+      render 'home/index'
     end
   end
 

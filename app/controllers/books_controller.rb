@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  before_action :set_author, only: [:new, :create]
+  before_action :set_author, only: [:new, :create, :update]
   def new
     @user = current_user
     @book = @author.books.build
@@ -15,6 +15,23 @@ class BooksController < ApplicationController
     if @book.save
       redirect_to author_path(@author)
       flash[:success] = "New book added!"
+    else
+      redirect_to author_path(@author)
+      flash[:warning] = "Something went wrong. Please try again"
+    end
+  end
+
+  def edit
+    @book = Book.find(params[:id])
+    @author = @book.author
+  end
+
+  def update
+    @book = Book.find(params[:id])
+    updated = @book.update(book_params)
+    if updated
+      redirect_to author_path(@author)
+      flash[:success] = "Book information edited"
     else
       redirect_to author_path(@author)
       flash[:warning] = "Something went wrong. Please try again"
