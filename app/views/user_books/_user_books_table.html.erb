@@ -1,0 +1,27 @@
+<table class="table table-head-fixed table-bordered table-responsive-sm" >
+  <tbody class=" bg-old-blue">
+  <tr>
+    <td>
+      <ul class="list-group list-group-horizontal-md flex-fill list-unstyled"
+          style="display: grid !important; grid-template-columns: repeat(3, 1fr);">
+        <% user_books.map(&:book).map do |book| %>
+          <li class="small">
+            <div class="row" >
+              <div class="col">
+                <%= image_tag("generic-book-cover.jpg", class: 'generic-cover') %>
+              </div>
+              <div class="col-8">
+                <p>
+                  <strong class="text-white"><%= book.title %></strong><br>
+                  <%= link_to book.author.name, author_path(book.author),
+                              class: 'text-gray' %>
+                </p>
+              </div>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </td>
+  </tr>
+  </tbody>
+</table>

@@ -1,0 +1,33 @@
+<div class="col-7 col-sm-9">
+  <div class="tab-content" id="vert-tabs-tabContent">
+    <div class="tab-pane text-left fade active show" id="vert-tabs-all"
+         role="tabpanel" aria-labelledby="vert-tabs-all-tab">
+      <%= render partial: 'user_books_table', locals: { user_books: @user_books} %>
+    </div>
+    <div class="tab-pane fade" id="vert-tabs-favorite" role="tabpanel"
+         aria-labelledby="vert-tabs-favorite-tab">
+      <%= render partial: 'user_books_table',
+                 locals: { user_books: @user_books.favorite_books} %>
+    </div>
+    <div class="tab-pane fade" id="vert-tabs-read" role="tabpanel"
+         aria-labelledby="vert-tabs-read-tab">
+      <%= render partial: 'user_books_table',
+                 locals: { user_books: @user_books.by_book_status(UserBook::READ)} %>
+    </div>
+    <div class="tab-pane fade" id="vert-tabs-reading" role="tabpanel"
+         aria-labelledby="vert-tabs-reading-tab">
+      <%= render partial: 'user_books_table',
+                 locals: { user_books: @user_books.by_book_status(UserBook::READING)} %>
+    </div>
+    <div class="tab-pane fade" id="vert-tabs-fav-authors" role="tabpanel"
+         aria-labelledby="vert-tabs-fav-authors-tab">
+      Paa vestibulum commodo nibh nec blandit. Maecenas neque magna, iaculis
+      tempus turpis ac, ornare sodales tellus. Mauris eget blandit dolor.
+      Quisque tincidunt venenatis vulputate. Morbi euismod molestie tristique.
+      Vestibulum consectetur dolor a vestibulum pharetra. Donec interdum placerat
+      urna nec pharetra. Etiam eget dapibus orci, eget aliquet urna. Nunc at
+      consequat diam. Nunc et felis ut nisl commodo dignissim. In hac habitasse
+      platea dictumst. Praesent imperdiet accumsan ex sit amet facilisis.
+    </div>
+  </div>
+</div>

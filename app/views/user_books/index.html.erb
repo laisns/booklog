@@ -1,0 +1,52 @@
+<div class="user-booklog mx-auto">
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 ">
+          <div class="callout callout-success bg-gray-light">
+            <h3><%= @user.name %>'s personal log</h3>
+            <small><i class="fas fa-info"></i> Note: To add a new book to your
+              personal log, you must edit or create a new list.
+            </small>
+          </div>
+          <div class="card card-olive card-outline bg-dark-opacity-8 text-white">
+            <div class="card-header">
+              <h3 class="card-title">Showing all Books</h3>
+            </div>
+            <div class="card-body">
+              <h4>Books</h4>
+              <div class="row">
+                <div class="col-5 col-sm-3">
+                  <div class="nav flex-column nav-tabs h-100" id="vert-tabs-tab"
+                       role="tablist" aria-orientation="vertical">
+                    <a class="nav-link active text-muted" id="vert-tabs-all-tab"
+                       data-toggle="pill" href="#vert-tabs-all" role="tab"
+                       aria-controls="vert-tabs-all" aria-selected="true">All
+                    </a>
+                    <a class="nav-link text-muted" id="vert-tabs-favorite-tab"
+                       data-toggle="pill" href="#vert-tabs-favorite" role="tab"
+                       aria-controls="vert-tabs-favorite" aria-selected="false">Favorite
+                    </a>
+                    <a class="nav-link text-muted" id="vert-tabs-read-tab"
+                       data-toggle="pill" href="#vert-tabs-read" role="tab"
+                       aria-controls="vert-tabs-read" aria-selected="false">Read
+                    </a>
+                    <a class="nav-link text-muted" id="vert-tabs-reading-tab"
+                       data-toggle="pill" href="#vert-tabs-reading" role="tab"
+                       aria-controls="vert-tabs-reading" aria-selected="false">Reading
+                    </a>
+                    <a class="nav-link text-muted" id="vert-tabs-fav-authors-tab"
+                       data-toggle="pill" href="#vert-tabs-fav-authors" role="tab"
+                       aria-controls="vert-tabs-fav-authors" aria-selected="false">Favorite Authors
+                    </a>
+                  </div>
+                </div>
+                <%= render partial: 'user_books/all' %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
