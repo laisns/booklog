@@ -12,16 +12,15 @@
             <ul class="nav nav-pills">
               <li class="nav-item"><a class="nav-link active" href="#feed" data-toggle="tab">Feed</a></li>
               <li class="nav-item"><a class="nav-link" href="#activity" data-toggle="tab">Activity</a></li>
-              <li class="nav-item"><a class="nav-link" href="#" data-toggle="tab">Stats</a></li>
+              <li class="nav-item"><a class="nav-link" href="#stats" data-toggle="tab">Stats</a></li>
               <li class="nav-item invisible"><a class="nav-link" href="#settings" data-toggle="tab">Settings</a></li>
             </ul>
           </div>
           <div class="card-body">
             <div class="tab-content">
               <%= render partial: 'feed' %>
-
               <%= render partial: 'activity' %>
-
+              <%= render partial: 'stats' %>
               <%= render partial: 'settings' %>
             </div>
           </div>

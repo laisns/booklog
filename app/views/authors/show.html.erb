@@ -18,7 +18,7 @@
               </div>
             </div>
             <div class="row invoice-info">
-              <div class="col-sm-4 invoice-col">
+              <div class="col-sm-5 invoice-col">
                 <address>
                   <br>
                   <strong>Born: </strong><br>
@@ -28,7 +28,7 @@
                   <strong><%= @author.name %></strong> registered as author.
                   <%= link_to 'Add more books', new_book_path(author: @author.id),
                               remote: true, data: { toggle: 'modal',
-                                                    target: '#new_books_modal' }%>
+                                                    target: '#new_books_modal' } %>
                   <div id="new_books_modal" class="modal" role="dialog"
                        aria-labelledby="myModalLabel" aria-hidden="true">
                   </div>
@@ -39,6 +39,12 @@
                   <br>
                   <%= show_nationality(@author) %><br>
                   <%= show_birth_date(@author) %><br>
+                </address>
+              </div>
+              <div class="col-sm-2 invoice-col" style="padding-left: 6.5rem !important;">
+                <br>
+                <address>
+                  <i class="fas fa-question-circle fa-7x"></i>
                 </address>
               </div>
             </div>

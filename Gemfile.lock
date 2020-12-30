@@ -92,6 +92,10 @@ GEM
       database_cleaner (~> 1.8.0)
     diff-lcs (1.4.4)
     erubi (1.9.0)
+    exception_handler (0.8.0.0)
+      bundler
+      rails (>= 4.2.0)
+      responders
     execjs (2.7.0)
     factory_bot (6.1.0)
       activesupport (>= 5.0.0)
@@ -205,6 +209,9 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     regexp_parser (1.8.2)
+    responders (3.0.1)
+      actionpack (>= 5.0)
+      railties (>= 5.0)
     rexml (3.2.4)
     rspec-core (3.9.3)
       rspec-support (~> 3.9.3)
@@ -301,6 +308,7 @@ DEPENDENCIES
   byebug
   capybara
   database_cleaner-active_record
+  exception_handler
   factory_bot_rails
   faker
   font-awesome-rails

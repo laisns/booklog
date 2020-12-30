@@ -1,18 +1,18 @@
 <div class="text-white form-list-content">
-  <h2 class="text-white"><%= form_action(@list) %></h2>
-  <p> Coordinate, track, and update your work in one place, so projects stay transparent and on schedule.</p>
+  <%= content_tag(:h2, form_action(@list), class: 'text-white') %>
+  <%= content_tag(:p, "#{I18n.t 'info_messages.form_list'}" ) %>
   <hr class="bg-gray">
-  <div class="card card-gray bg-old-blue">
-    <div class="card-header">
-      <h3 class="card-title">List name</h3>
+  <div class="card card-gray bg-old-blue <%= 'collapsed-card' if editing %>">
+    <div class="card-header bg-gradient-dark">
+      <%= content_tag(:h3, editing ? 'Edit List Name' : 'List Name', class: 'card-title') %>
       <div class="card-tools">
         <button type="button" class="btn btn-tool" data-card-widget="collapse"
                 data-toggle="tooltip" title="Collapse">
-          <i class="fas fa-minus"></i>
+          <i class="fas fa-<%= editing ? 'plus' : 'minus' %>"></i>
         </button>
       </div>
     </div>
-    <div class="card-body" style="display: block;">
+    <div class="card-body" style="display: <%= editing ? 'none' : 'block' %>;">
       <%= form_for shallow_args(@user, @list) do |f| %>
         <div class="form-group">
           <%= f.label :name %>

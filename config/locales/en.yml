@@ -31,6 +31,9 @@
 
 en:
   hello: "Hello world"
+  info_messages:
+    form_list: 'Coordinate, track, and update your work in one place,
+                so projects stay transparent and on schedule.'
   activity:
     list:
       create: "created a new list"
