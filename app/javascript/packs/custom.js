@@ -15,7 +15,10 @@ $(document).ready(function (){
         toggleFavoriteIcon($(this))
     });
 
-
+    $('.actions-toggle.dropdown-item').on('click', function (e){
+        let attribute = $(this)[0];
+        toggleAttributeValue(attribute);
+    });
 });
 
 function autoCompleteBookTitle(input){
@@ -67,4 +70,22 @@ function toggleFavoriteIcon(element) {
         iconChecked.removeAttr('hidden');
         iconNonChecked.attr('hidden', 'hidden')
     }
+};
+
+function toggleAttributeValue(attrs) {
+    $.ajax({
+        type: 'GET',
+        url: '/user_books/toggle_params',
+        data: { attribute: attrs.dataset['attribute'],
+                value: attrs.dataset['value'],
+                list: attrs.dataset['list'],
+                id: attrs.dataset['id'] },
+        dataType: 'json',
+        success: function(data){
+            if (data['attribute'] == 'book_status') {
+                $(attrs.parentElement).find('*').removeClass('select-attr');
+            }
+            attrs.classList.toggle('select-attr');
+        }
+    })
 };

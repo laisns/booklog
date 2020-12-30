@@ -1,14 +1,14 @@
 class UserBooksController < ApplicationController
   before_action :get_user
-  before_action :get_list, only: [:create]
-  before_action :set_user_book, only: [:edit, :update]
+  before_action :get_list, only: [:create, :new, :toggle_params]
+  before_action :set_user_book, only: [:edit, :update, :toggle_params]
 
   def index
     @user_books = @user.user_books
   end
 
   def new
-    # @user_book = @user.user_books.build
+    @user_book = @user.user_books.build
   end
 
   def create
@@ -28,6 +28,16 @@ class UserBooksController < ApplicationController
     updated = @user_book.update!(user_books_params)
     flash.now.alert = "Something went wrong. Please try again" unless updated
     flash.now[:notice] = "List successfully edited!"
+  end
+
+  def toggle_params
+    attribute = params[:attribute]
+    if attribute == 'book_status'
+      @user_book.update!(book_status: params[:value].to_i)
+    else
+      @user_book.toggle!(attribute)
+    end
+    render json: { attribute: attribute, value: params[:value] }
   end
 
   private

@@ -5,13 +5,13 @@
 @import url("http://fonts.googleapis.com/css?family=Pacifico");
 @import url("https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css");
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url("https://use.fontawesome.com/releases/v5.0.1/css/all.css");
 @import '~easy-autocomplete/dist/easy-autocomplete.min';
 @import '~easy-autocomplete/dist/easy-autocomplete.themes.min';
 @import '~jsgrid/dist/jsgrid-theme.min';
 @import "~jsgrid/dist/jsgrid.min";
 @import "~flatpickr/dist/flatpickr.min";
 @import "~datatables.net-bs4/css/dataTables.bootstrap4.min";
-//@import "~datatables.net-responsive-bs4/css/responsive.bootstrap4.min";
 
 .nav-pills .nav-link{border-radius:.25rem}.nav-pills .nav-link.active,
   .nav-pills .show>.nav-link{
@@ -55,7 +55,7 @@
 }
 
 .bg-old-blue {
-  background-color: rgb(30, 33, 40)
+  background-color: rgb(30, 33, 40)!important;
   //background-color: rgb(13,15,19)
 }
 
@@ -76,4 +76,25 @@
 .profile-picture {
   width: 45%;
   height: 45%;
+}
+
+.booklogFooter {
+  padding-bottom: 32px;
+  padding-top: 32px;
+}
+
+.user-booklog {
+  width: 85%;
+}
+
+.generic-cover {
+  width: 75%;
+  height: 75%;
+}
+
+.select-attr::before {
+  content: "\f00c";
+  font-family: 'Font Awesome\ 5 Free';
+  font-weight: 900;
+  margin-left: -20px;
 }

@@ -5,11 +5,11 @@ Rails.application.routes.draw do
   get 'search' => 'home#search', as: :search
   get 'search_results' => 'home#search_results', as: :search_results
   post 'get_search_response' => 'home#get_search_response', as: :get_search_response
-  get 'register' => 'users#new'
-  get 'edit_profile' => 'users#edit'
   resources :users, except: [:destroy] do
     resources :lists, shallow: true
   end
+  get 'register' => 'users#new'
+  get 'edit_profile' => 'users#edit'
 
   resources :books do
     collection do
@@ -19,8 +19,8 @@ Rails.application.routes.draw do
 
   resources :authors
   resources :book_lists, only: [:new, :create, :destroy]
-  resources :user_books
-  # post 'users' => 'users#create'
+  resources :user_books, except: [:show]
+  get 'user_books/toggle_params' => 'user_books#toggle_params'
   resources :sessions, only: [:new, :create]
   delete 'logout' => 'sessions#destroy'
 

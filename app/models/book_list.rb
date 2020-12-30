@@ -7,4 +7,8 @@ class BookList < ApplicationRecord
   delegate :title, to: :book
 
   validates_uniqueness_of :book_id, scope: :list_id
+
+  def get_user_book
+    user.user_books.by_book_id(book_id).first
+  end
 end

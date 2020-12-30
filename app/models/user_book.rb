@@ -10,6 +10,7 @@ class UserBook < ApplicationRecord
   scope :favorite_books, -> { where(favorite_book: true) }
   scope :favorite_authors, -> { where(favorite_author: true) }
   scope :by_book_status, -> (book_status) { where(book_status: book_status) }
+  scope :by_book_id, -> (book_id) { where(book_id: book_id) }
 
   TO_READ = 0
   READING = 1
