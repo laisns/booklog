@@ -19,6 +19,10 @@ $(document).ready(function (){
         let attribute = $(this)[0];
         toggleAttributeValue(attribute);
     });
+
+    $('#clickable-list').on('click', function (e){
+        location.href = '/user_books'
+    });
 });
 
 function autoCompleteBookTitle(input){

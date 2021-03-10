@@ -6,8 +6,7 @@
     </div>
     <%= content_tag :h4, "Hello, #{@user.name}", class: 'profile-username text-center' %>
     <p class="text-muted text-center">@<%= @user.login_name%></p>
-
-    <ul class="list-group list-group-unbordered mb-3">
+    <ul class="list-group list-group-unbordered mb-3" id="clickable-list">
       <li class="list-group-item bg-dark-opacity-8">
         Lists <a class="float-right text-white"><%= user_total_lists(@user) %></a>
       </li>

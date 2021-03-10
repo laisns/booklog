@@ -30,4 +30,9 @@ module ApplicationHelper
   def selected_icon(selected)
     content_tag(:i, "", class: "fas fa-check") if selected
   end
+
+  def random_badge_bg_color
+    colors = %w'fuchsia success navy warning primary red indigo olive orange yellow'
+    "badge bg-#{colors.shuffle.first}"
+  end
 end

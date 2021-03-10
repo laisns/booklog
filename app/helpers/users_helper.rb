@@ -29,4 +29,12 @@ module UsersHelper
     image_tag ('avatar07.png'), class: 'rounded-circle profile-picture',
               alt: 'User profile picture'
   end
+
+  def interest_tags(user_tags)
+    content_tag(:p, class: 'text-muted') do
+      user_tags.each do |tag|
+        concat content_tag(:span, tag.name, class: random_badge_bg_color)
+      end
+    end
+  end
 end

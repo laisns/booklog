@@ -3,11 +3,10 @@
     <h3 class="card-title text-white">About Me</h3>
   </div>
   <div class="card-body">
-    <a href="<%= user_books_path %>">
-      <strong class="text-white">
-        <i class="fas fa-book mr-1 text-yellow"></i>Books Added
-      </strong>
-    </a>
+    <strong class="text-white">
+      <i class="fas fa-book mr-1 text-yellow"></i>Books Added
+    </strong>
+
     <p class="text-muted"><%= books_added_info(@user)%></p>
     <hr>
 
@@ -17,12 +16,7 @@
 
     <strong><i class="fas fa-tags mr-1 text-green"></i> Interests</strong>
     <p class="text-muted">
-      <span class="badge bg-fuchsia">Russian Literature</span>
-      <span class="badge bg-success">Romance</span>
-      <span class="badge bg-navy">Biography</span>
-      <span class="badge bg-warning">Horror</span>
-      <span class="badge bg-primary">Poetry</span>
-      <span class="badge bg-red">Modern Classic</span>
+      <%= @user.tags.present? ? interest_tags(@user.tags) : 'No tags added yet!' %>
     </p>
     <hr>
 

@@ -41,7 +41,7 @@
             </div>
           </div>
         </a>
-        <a href="#" class="dropdown-item pt-2">
+        <a href="<%= user_user_tags_path(@user) %>" class="dropdown-item pt-2">
           <div class="media">
             <div class="media-body">
               <h3 class="dropdown-item-title right-0">
@@ -61,29 +61,9 @@
       <a class="nav-link" data-toggle="dropdown" href="#">
         <i class="fas fa-list"></i>
       </a>
-      <div class="dropdown-menu dropdown-primary">
-        <span class="dropdown-item dropdown-header">Lists</span>
-        <div class="dropdown-divider"></div>
-        <i class="fas fa-dot-circle mr-2"></i> Create New List
-        <div class="dropdown-divider"></div>
-        <a href="#" class="dropdown-item">
-          <i class="fas fa-dot-circle mr-2"></i> See Your Lists
-        </a>
-        <div class="dropdown-divider"></div>
-        <a href="#" class="dropdown-item">
-          <i class="fas fa-file mr-2"></i> Manage Your Tags
-        </a>
-        <div class="dropdown-divider"></div>
-        <div class="custom-control custom-switch">
-          <input type="checkbox" class="custom-control-input" id="customSwitch2" disabled>
-          <label class="custom-control-label" for="customSwitch2">Dark Mode</label>
-        </div>
-      </div>
     </li>
     <li class="nav-item">
-      <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
-        <i class="fas fa-th-large"></i>
-      </a>
+      <a class="nav-link"><i class="fas fa-th-large"></i></a>
     </li>
   </ul>
 </nav>

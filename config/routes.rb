@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   post 'get_search_response' => 'home#get_search_response', as: :get_search_response
   resources :users, except: [:destroy] do
     resources :lists, shallow: true
+    resources :user_tags, except: [:edit, :update], shallow: true
   end
   get 'register' => 'users#new'
   get 'edit_profile' => 'users#edit'
@@ -17,6 +18,7 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :book_tags, except: [:edit, :update]
   resources :authors
   resources :book_lists, only: [:new, :create, :destroy]
   resources :user_books, except: [:show]
