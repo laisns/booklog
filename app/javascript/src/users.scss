@@ -11,6 +11,7 @@
 @import '~jsgrid/dist/jsgrid-theme.min';
 @import "~jsgrid/dist/jsgrid.min";
 @import "~flatpickr/dist/flatpickr.min";
+@import "~flatpickr/dist/themes/dark";
 @import "~datatables.net-bs4/css/dataTables.bootstrap4.min";
 
 .nav-pills .nav-link{border-radius:.25rem}.nav-pills .nav-link.active,
@@ -78,6 +79,15 @@
   height: 45%;
 }
 
+.avatar-picker {
+  width: 20%;
+  height: 20%;
+}
+
+.avatar-border {
+  border: 5px solid #d81b60 !important;
+}
+
 .booklogFooter {
   padding-bottom: 32px;
   padding-top: 32px;
@@ -101,4 +111,38 @@
 
 #clickable-list {
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .carousel-inner .carousel-item > div {
+    display: none;
+  }
+  .carousel-inner .carousel-item > div:first-child {
+    display: block;
+  }
+}
+
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+  display: flex;
+}
+
+/* display 3 */
+@media (min-width: 768px) {
+
+  .carousel-inner .carousel-item-right.active,
+  .carousel-inner .carousel-item-next {
+    transform: translateX(33.333%);
+  }
+
+  .carousel-inner .carousel-item-left.active,
+  .carousel-inner .carousel-item-prev {
+    transform: translateX(-33.333%);
+  }
+}
+
+.carousel-inner .carousel-item-right,
+.carousel-inner .carousel-item-left{
+  transform: translateX(0);
 }

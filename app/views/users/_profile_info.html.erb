@@ -2,7 +2,13 @@
 <div class="card card-gray card-outline bg-dark-opacity-8">
   <div class="card-body box-profile">
     <div class="text-center">
-      <%= avatar_icon %>
+      <%= avatar_icon(@user) %>
+      <p class="change-avatar-info bg-dark-opacity-8" >
+        <i class="fas fa-camera"></i>
+        <a href="#avatar" class="change-avatar-text text-white" hidden="hidden" data-toggle="tab">
+          Change Avatar
+        </a>
+      </p>
     </div>
     <%= content_tag :h4, "Hello, #{@user.name}", class: 'profile-username text-center' %>
     <p class="text-muted text-center">@<%= @user.login_name%></p>

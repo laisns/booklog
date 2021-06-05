@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   layout 'application', only: [:new, :create]
-  before_action :set_user, only: [:edit, :update]
+  before_action :set_user, only: [:edit, :update, :set_avatar]
 
   def new
     @user = User.new
@@ -10,10 +10,10 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     @user.login_name.downcase!
     if @user.save
-      set_avatar
       session[:user_id] = @user.id
+      attach_avatar(@user.id)
       redirect_to root_path
-      flash[:notice] = "Your account was created successfully"
+      flash[:notice] = "Your account was created successfully. Welcome!"
     else
       redirect_to register_path
       flash[:alert] = "Something went wrong. Please try again #{@user.errors.messages}"
@@ -27,42 +27,47 @@ class UsersController < ApplicationController
   end
 
   def update
-    if params[:password].present? && params[:password_confirmation].present?
-      update_password(@user, params[:password], params[:password_confirmation])
-    end
-    updated = @user.update(user_params.except(:password, :password_confirmation))
-    if updated
-      set_avatar
-      redirect_to user_path(@user)
-      flash[:notice] = "Your account was created successfully"
+    if user_params[:password].present? && user_params[:password_confirmation].present?
+      updated = @user.update_password(user_params[:password],
+                                      user_params[:password_confirmation])
+      flash_error_or_success(updated, user_params[:password].present?)
     else
-      render :show
-      flash.now.alert = "Something went wrong. Please try again"
+      updated = @user.update(user_params.except(:password,
+                                                :password_confirmation))
+      flash_error_or_success(updated, user_params[:password].present?)
     end
   end
 
-  def update_password(user, password, password_confirmation)
-    error_msg = I18n.t('active_record.users.validations.password_mismatch')
-    changed_password = user.update(password: password,
-                                   password_confirmation: password_confirmation)
-    flash[:notice] = error_msg unless changed_password
-    flash[:notice] = 'Password was updated!'
-    redirect_to user_path(user)
+  def flash_error_or_success(updated, password)
+    msg_update = password ? 'validations.password_success' : 'update'
+    msg_error = password ? 'validations.password_mismatch' : 'validations.errors'
+    redirect_to user_path(@user)
+    if updated
+      flash[:success] = I18n.t("active_record.users.#{msg_update}")
+    else
+      flash.now[:error] = I18n.t("active_record.users.#{msg_error}")
+    end
+  end
+
+  def set_avatar
+    attached = attach_avatar(params[:id])
+    redirect_to user_path(@user)
+    flash[:success] = "Avatar defined!" if attached
   end
 
   private
 
   def user_params
     params.require(:user).permit(:name, :login_name, :birth_date,
-                                 :password, :password_confirmation, :avatar)
+                                 :password, :password_confirmation, :avatar,
+                                 :settings, :personal_activity, :birthday)
   end
 
   def set_user
-    @user = User.find_by_login_name(params[:id])
+    @user = User.find(params[:id])
   end
 
-  def set_avatar
-    return unless params[:avatar]
-    UserAvatarService.new(user_params).attach_avatar
+  def attach_avatar(user_id)
+    UserAvatarService.new(user_id, params[:avatar]).attach_file
   end
 end

@@ -25,9 +25,14 @@ module UsersHelper
     "#{user_total_books(user)} books"
   end
 
-  def avatar_icon
-    image_tag ('avatar07.png'), class: 'rounded-circle profile-picture',
-              alt: 'User profile picture'
+  def avatar_icon(user)
+    if user.avatar.attached?
+      image_tag (user.avatar), class: 'rounded-circle profile-picture',
+                                  alt: 'User profile picture'
+    else
+      image_tag ('avatars/avatar_default.png'), class: 'rounded-circle profile-picture',
+                alt: 'User profile picture'
+    end
   end
 
   def interest_tags(user_tags)

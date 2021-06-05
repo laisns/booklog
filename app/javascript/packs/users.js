@@ -12,14 +12,7 @@ import 'admin-lte'
 import 'admin-lte/dist/js/adminlte'
 import 'datatables.net/js/jquery.dataTables.min'
 import 'datatables.net-bs4/js/dataTables.bootstrap4.min'
-import flatpickr from "flatpickr"
-
-flatpickr("[data-behavior='flatpickr']", {
-    minDate: new Date,
-    altInput: true,
-    dateFormat: "Y-m-d"
-});
-
+import './users/custom_datepicker'
 require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")

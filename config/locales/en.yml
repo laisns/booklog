@@ -34,6 +34,8 @@ en:
   info_messages:
     form_list: 'Coordinate, track, and update your work in one place,
                 so projects stay transparent and on schedule.'
+    few_data: 'You have not added enough books or tags yet. Create a new list,
+               or add tags about your interests to populate your feed.'
   activity:
     list:
       create: "created a new list"
@@ -53,6 +55,9 @@ en:
       success: 'Success'
   active_record:
     users:
+      update: 'Profile Settings changed!'
       validations:
         invalid_password: 'You entered a invalid password'
         password_mismatch: "Password doesn't match password confirmation"
+        password_success: 'Password changed!'
+        errors: 'Something went wrong. Please try again'

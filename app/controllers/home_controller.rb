@@ -2,7 +2,7 @@ require 'httparty'
 class HomeController < ApplicationController
   include HTTParty
   def index
-    redirect_to user_path(current_user.login_name) if current_user
+    redirect_to user_path(current_user) if current_user
   end
 
   def show

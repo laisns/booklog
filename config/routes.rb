@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   get 'search_results' => 'home#search_results', as: :search_results
   post 'get_search_response' => 'home#get_search_response', as: :get_search_response
   resources :users, except: [:destroy] do
+    member do
+      put :set_avatar
+    end
     resources :lists, shallow: true
     resources :user_tags, except: [:edit, :update], shallow: true
   end

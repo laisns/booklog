@@ -1,4 +1,5 @@
 <div class="tab-pane" id="activity">
+  <%= content_tag(:h2, 'No recent activity', class: 'text-center text-muted') if @user.recent_activity.none? %>
   <div class="timeline timeline-inverse">
     <% @user.recent_activity.map do |date, activities| %>
       <div class="time-label" >
@@ -44,21 +45,5 @@
         <% end %>
       </div>
     <% end %>
-    <div class="time-label">
-      <span class="bg-success">3 Jan. 2014</span>
-    </div>
-    <div>
-      <i class="fas fa-camera bg-purple"></i>
-      <div class="timeline-item">
-        <span class="time"><i class="far fa-clock"></i> 2 days ago</span>
-        <h3 class="timeline-header"><a href="#">Mina Lee</a> uploaded new photos</h3>
-        <div class="timeline-body">
-          <img src="http://placehold.it/150x100" alt="...">
-          <img src="http://placehold.it/150x100" alt="...">
-          <img src="http://placehold.it/150x100" alt="...">
-          <img src="http://placehold.it/150x100" alt="...">
-        </div>
-      </div>
-    </div>
   </div>
 </div>

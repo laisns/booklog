@@ -35,4 +35,10 @@ module ApplicationHelper
     colors = %w'fuchsia success navy warning primary red indigo olive orange yellow'
     "badge bg-#{colors.shuffle.first}"
   end
+
+  def avatar_files
+    files = Dir["app/assets/images/avatars/*"]
+    files.each { |e| e.slice!("app/assets/images/avatars/") }
+    files.each { |e| e.slice!(".png") }
+  end
 end

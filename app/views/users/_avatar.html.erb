@@ -1,0 +1,22 @@
+<div class="tab-pane" id="avatar">
+  <div class="row">
+    <div class="col-sm-4 text-center">
+      <p>Remove Avatar</p>
+      <div class="text-center"><%= link_to set_avatar_user_path(@user, id: @user.id, avatar: "avatar_default"), method: :put do %>
+          <%= image_tag ("avatars/avatar_default.png"), class: 'rounded-circle avatar-picker', alt: 'User profile picture' %>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-sm-8">
+      <h4>Choose a new Avatar:</h4>
+      <div class="text-center">
+        <% avatar_files.reject { |av| av=~ /default/ }.map do |file| %>
+          <%= link_to set_avatar_user_path(id: @user.id, avatar: file), method: :put do %>
+            <%= image_tag ("avatars/#{file}"), class: 'rounded-circle avatar-picker', alt: 'User profile picture' %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+

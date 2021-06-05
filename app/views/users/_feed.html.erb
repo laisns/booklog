@@ -1,35 +1,21 @@
 <div class="tab-pane active" id="feed">
   <div class="post">
-    <% if @user.lists.any?  %>
-      <p> Last edited lists</p>
+    <p><i class="fas fa-info-circle"></i>
+      Based on your interests, here are some recommendations for you:
+    </p>
+    <% if @user.books.any? %>
       <%= render partial: 'lists/lists_carousel', locals: {user: @user} %>
     <% else %>
-      <p>
-        You have no books or interests yet. Create a new list, or add tags about
-        your interests to populate your feed.
-      </p>
+      <h5 class="text-white text-center"><i class="fas fa-info-circle"></i>
+        <%= I18n.t('info_messages.few_data') %>
+      </h5>
     <% end %>
   </div>
-
   <div class="post">
     <p>
       An example of how tag-generated interests looks like.
       Based on your tags, here are some books for you:
     </p>
-    <div class="row justify-content-md-center">
-      <div class="col-sm">
-        <%= image_tag 'book-cover1.png', alt: 'photo', class: 'img-fluid' %>
-        <p class="p-1"> Roberto Bolaño </p>
-      </div>
-      <div class="col-sm">
-        <%= image_tag 'book-cover2.png', alt: 'photo', class: 'img-fluid' %>
-        <p class="p-1"> Haruki Murakami </p>
-      </div>
-      <div class="col-sm">
-        <%= image_tag 'book-cover3.png', alt: 'photo', class: 'img-fluid' %>
-        <p class="p-1"> John Steinbeck </p>
-      </div>
-    </div>
     <p>
       <a href="#" class="link-black text-sm mr-2"><i class="fas fa-share mr-1"></i> Copy this class</a>
       <a href="#" class="link-black text-sm"><i class="far fa-thumbs-up mr-1"></i> I Like this font</a>
@@ -41,12 +27,10 @@
     </p>
 
   </div>
-
   <div class="post clearfix">
     <p>
       This maybe could be used as a quick tool to create interest tags??
     </p>
-
     <form class="form-horizontal">
       <div class="input-group input-group-sm mb-0">
         <input class="form-control form-control-sm" placeholder="Thinking about it....">

@@ -23,6 +23,43 @@ $(document).ready(function (){
     $('#clickable-list').on('click', function (e){
         location.href = '/user_books'
     });
+
+    $(".change-avatar-info").hover(function(){
+        $('.change-avatar-text').removeAttr('hidden');
+        }, function(){
+        $('.change-avatar-text').attr('hidden', 'hidden');
+    });
+
+    $(".avatar-picker").hover(function(){
+        let element = $(this)[0];
+        element.classList.add('avatar-border');
+    }, function(){
+        let element = $(this)[0];
+        element.classList.remove('avatar-border');
+    });
+
+    $('#recipeCarousel').carousel({
+        interval: 10000
+    });
+
+    $('.carousel .carousel-item').each(function(){
+        var minPerSlide = 3;
+        var next = $(this).next();
+        if (!next.length) {
+            next = $(this).siblings(':first');
+        }
+        next.children(':first-child').clone().appendTo($(this));
+
+        for (var i=0;i<minPerSlide;i++) {
+            next=next.next();
+            if (!next.length) {
+                next = $(this).siblings(':first');
+            }
+
+            next.children(':first-child').clone().appendTo($(this));
+        }
+    });
+
 });
 
 function autoCompleteBookTitle(input){
